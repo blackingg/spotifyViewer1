@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Yenagoa",
+			"country": {
+				"code": "NG",
+				"name": "Nigeria"
+			},
+			"subdivision": {
+				"code": "BY",
+				"name": "Bayelsa State"
+			},
+			"timezone": "Africa/Lagos",
+			"latitude": 4.925,
+			"longitude": 6.2605
+		},
+		"timestamp": 1724277205042
+	}
+}
