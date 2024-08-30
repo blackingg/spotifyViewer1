@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const CLIENT_ID = import.meta.env.VITE_Client_ID;
-  const REDIRECT_URI = "http://localhost:5173";
+  const REDIRECT_URI = "https://spotifyviewer-blackingg.netlify.app";
   const TOKEN_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
