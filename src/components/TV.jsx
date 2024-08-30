@@ -56,6 +56,9 @@ export function TV({ setLyrics, ...props }) {
           const trackTitle = data.item.name;
           const trackArtist = data.item.artists[0].name;
 
+          console.log("trackTitle:", trackTitle);
+          console.log("trackArtist:", trackArtist);
+
           try {
             const lyricsResponse = await axios.get(
               `/.netlify/functions/lyrics`,
