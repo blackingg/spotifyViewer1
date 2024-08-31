@@ -39,9 +39,7 @@ export default async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        lyrics: lyrics || "Lyrics not found",
-      }),
+      body: lyrics ? JSON.stringify({ lyrics }) : "lyrics not found",
     };
   } catch (error) {
     if (error.response && error.response.status === 403) {
