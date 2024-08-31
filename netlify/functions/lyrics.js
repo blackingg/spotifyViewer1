@@ -14,11 +14,16 @@ export default async (event) => {
 
   try {
     // Step 1: Search for the track to get the song ID
+    console.log("this is before the first axios");
     const searchResponse = await axios.get(
       `https://api.musixmatch.com/ws/1.1/track.search?q_track=${trackTitle}&q_artist=${trackArtist}&apikey=${MUSIXMATCH_API_KEY}`
     );
 
+    console.log("searchResponse:", searchResponse.data);
+
     const trackList = searchResponse.data.message.body.track_list;
+
+    console.log("trackList:", trackList);
 
     if (!trackList || trackList.length === 0) {
       return {
