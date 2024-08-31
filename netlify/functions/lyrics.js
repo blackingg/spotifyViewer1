@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 export default async (event) => {
   const { trackTitle, trackArtist } = event.queryStringParameters;
