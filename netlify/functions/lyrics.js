@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default async (event) => {
+  console.log("queryStringParameters:", event.queryStringParameters, event);
   const { trackTitle, trackArtist } = event.queryStringParameters;
 
   const MUSIXMATCH_API_KEY = import.meta.env.VITE_MUSIXMATCH_API_KEY;
