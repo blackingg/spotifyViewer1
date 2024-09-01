@@ -10,9 +10,14 @@ export default async (event) => {
   // Extract query parameters from the URL
   const searchParams = new URLSearchParams(url.search);
 
+  console.log("searchParams:", searchParams);
+
   // Access individual parameters
   const trackTitle = searchParams.get("trackTitle") || "defaultValue1";
   const trackArtist = searchParams.get("trackArtist") || "defaultValue2";
+
+  console.log("trackTitle:", trackTitle);
+  console.log("trackArtist:", trackArtist);
 
   const MUSIXMATCH_API_KEY = import.meta.env.VITE_MUSIXMATCH_API_KEY;
 
