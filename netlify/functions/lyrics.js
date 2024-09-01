@@ -1,8 +1,18 @@
 import axios from "axios";
 
 export default async (event) => {
-  console.log("queryStringParameters:", event.queryStringParameters, event);
-  const { trackTitle, trackArtist } = event.queryStringParameters;
+  //console.log("queryStringParameters:", event.queryStringParameters, event);
+  //const { trackTitle, trackArtist } = event.queryStringParameters;
+
+  // Assuming event.rawUrl contains the full URL
+  const url = new URL(event.rawUrl);
+
+  // Extract query parameters from the URL
+  const searchParams = new URLSearchParams(url.search);
+
+  // Access individual parameters
+  const trackTitle = searchParams.get("trackTitle") || "defaultValue1";
+  const trackArtist = searchParams.get("trackArtist") || "defaultValue2";
 
   const MUSIXMATCH_API_KEY = import.meta.env.VITE_MUSIXMATCH_API_KEY;
 
@@ -45,9 +55,7 @@ export default async (event) => {
 
     return {
       statusCode: 200,
-      body: lyrics
-        ? JSON.stringify({ lyrics: "Hello World" })
-        : "lyrics not found",
+      body: lyrics ? JSON.stringify({ lyrics }) : "lyrics not found",
     };
   } catch (error) {
     if (error.response && error.response.status === 403) {
