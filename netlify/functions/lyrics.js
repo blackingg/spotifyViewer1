@@ -4,6 +4,8 @@ export default async (event) => {
   //console.log("queryStringParameters:", event.queryStringParameters, event);
   //const { trackTitle, trackArtist } = event.queryStringParameters;
 
+  console.log("Event:", JSON.stringify(event, null, 2));
+
   // Assuming event.rawUrl contains the full URL
   const url = new URL(event.rawUrl);
 
